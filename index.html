@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOYEUX NOËL MAMAN & PAPA ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Christmas Color Palette */
+      --bg-gradient: linear-gradient(-45deg, #d4145a, #fbb03b, #2e8b57, #d4145a); 
+      --panel-bg: rgba(255, 255, 255, 0.9);
+      --text-color: #333;
+      --accent-red: #b3000c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: var(--text-color);
+      background: var(--bg-gradient);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite; /* Moving background */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Header */
+    header {
+      background: var(--panel-bg);
+      padding: 20px 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem; /* Big cursive font */
+      color: var(--accent-red);
+      line-height: 1.2;
+    }
+
+    /* Message Box */
+    #message {
+      background: var(--panel-bg);
+      padding: 30px;
+      border-radius: 15px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    #message p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* --- INFINITE SCROLL SECTION --- */
+    .marquee-wrapper {
+      width: 100vw;
+      overflow: hidden;
+      padding: 40px 0;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      /* Speed of scroll: 50s. Change to 30s for faster, 60s for slower */
+      animation: scrollLeft 50s linear infinite; 
+    }
+
+    /* Pause the movement when mouse is over it */
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-track img {
+      height: 350px; /* Force all images to same height */
+      width: auto;   /* Width adjusts naturally */
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      background: white;
+      padding: 5px; /* White border look */
+    }
+
+    .marquee-track img:hover {
+      transform: scale(1.05); /* Zoom slightly on hover */
+      z-index: 10;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Mobile Phones */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      .marquee-track img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>JOYEUX NOËL MAMAN & PAPA ❤️</h1>
+    </header>
+
+    <section id="message">
+      <p>
+        Merry Christmas! I made this website to collect 20 of our best memories together. 
+        I am so grateful for everything you do. 
+        <br><br>
+        (Hover over the photos to stop them!)
+      </p>
+    </section>
+  </div>
+
+  <div class="marquee-wrapper">
+    <div class="marquee-track" id="track">
+      <img src="images/1" alt="Photo 1">
+      <img src="images/2" alt="Photo 2">
+      <img src="images/3" alt="Photo 3">
+      <img src="images/4" alt="Photo 4">
+      <img src="images/5" alt="Photo 5">
+      <img src="images/6" alt="Photo 6">
+      <img src="images/7" alt="Photo 7">
+      <img src="images/8" alt="Photo 8">
+      <img src="images/9" alt="Photo 9">
+      <img src="images/10" alt="Photo 10">
+      <img src="images/11" alt="Photo 11">
+      <img src="images/12" alt="Photo 12">
+      <img src="images/13" alt="Photo 13">
+      <img src="images/14" alt="Photo 14">
+      <img src="images/15" alt="Photo 15">
+      <img src="images/16" alt="Photo 16">
+      <img src="images/17" alt="Photo 17">
+      <img src="images/18" alt="Photo 18">
+      <img src="images/19" alt="Photo 19">
+      <img src="images/20" alt="Photo 20">
+    </div>
+  </div>
+
+  <script>
+    // This script duplicates the images to create the infinite loop effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('track');
+      const content = track.innerHTML;
+      track.innerHTML = content + content; 
+    });
+  </script>
+
+</body>
+</html>
