@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JOYEUX NOËL YAYOUF ET MAMINOUNOURS❤️❤️</title>
+  <title>JOYEUX NOËL YAYOUF ET MAMINOUNOURS ❤️</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Christmas Color Palette */
       --bg-gradient: linear-gradient(-45deg, #d4145a, #fbb03b, #2e8b57, #d4145a); 
       --panel-bg: rgba(255, 255, 255, 0.9);
       --text-color: #333;
       --accent-red: #b3000c;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -26,7 +23,7 @@
       color: var(--text-color);
       background: var(--bg-gradient);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite; /* Moving background */
+      animation: gradientBG 15s ease infinite;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -40,7 +37,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Layout Container */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -48,7 +44,6 @@
       text-align: center;
     }
 
-    /* Header */
     header {
       background: var(--panel-bg);
       padding: 20px 20px;
@@ -59,13 +54,13 @@
 
     header h1 {
       margin: 0;
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem; /* Big cursive font */
+      font-family: 'Lobster', cursive; /* CHANGED FONT HERE */
+      font-size: 3rem;
       color: var(--accent-red);
       line-height: 1.2;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 
-    /* Message Box */
     #message {
       background: var(--panel-bg);
       padding: 30px;
@@ -93,27 +88,30 @@
       display: flex;
       gap: 20px;
       width: max-content;
-      /* Speed of scroll: 50s. Change to 30s for faster, 60s for slower */
       animation: scrollLeft 60s linear infinite; 
+      /* We enable hardware acceleration for smoother moving */
+      will-change: transform;
     }
 
-    /* Pause the movement when mouse is over it */
+    /* Pause scrolling on hover (Desktop) */
     .marquee-track:hover {
       animation-play-state: paused;
     }
 
     .marquee-track img {
-      height: 350px; /* Force all images to same height */
-      width: auto;   /* Width adjusts naturally */
+      height: 350px;
+      width: auto;
       border-radius: 10px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
       background: white;
-      padding: 5px; /* White border look */
+      padding: 5px;
+      cursor: pointer; /* Shows hand icon */
     }
 
+    /* A gentle zoom on hover, not massive */
     .marquee-track img:hover {
-      transform: scale(5.05); /* Zoom slightly on hover */
+      transform: scale(1.05); 
       z-index: 10;
     }
 
@@ -122,10 +120,51 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Mobile Phones */
+    /* --- LIGHTBOX (FULL SCREEN IMAGE) --- */
+    #lightbox {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9); /* Black background */
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      border: 4px solid white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #lightbox-caption {
+      color: white;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    /* Mobile Adjustments */
     @media (max-width: 600px) {
       header h1 { font-size: 2.2rem; }
-      .marquee-track img { height: 220px; }
+      .marquee-track img { height: 200px; }
+      #message { padding: 20px; }
     }
   </style>
 </head>
@@ -133,53 +172,85 @@
 
   <div class="container">
     <header>
-      <h1>JOYEUX NOËL YAYOUF ET MAMINOUNOURS❤️❤️</h1>
+      <h1>JOYEUX NOËL YAYOUF ET MAMINOUNOURS ❤️❤️</h1>
     </header>
 
     <section id="message">
       <p>
-        Chère Maminounours,
-        Cher Yayouf,
+        Chère Maminounours, Cher Yayouf,<br><br>
         Je vous adore plus que tout (plus que le ski), vous faites tellement de sacrifices pour moi et j'en serai éternellement reconnaissant.
-        Comme vous pouvez le voir, j'ai décidé de faire queqlque chose d'un peu plus différent pour ce cadeau de noël.
+        Comme vous pouvez le voir, j'ai décidé de faire quelque chose d'un peu différent pour ce cadeau de Noël.<br><br>
         Désolé de ne pas pouvoir passer ces vacances avec vous :(. Les examens ne tombent pas bien !
-        Je ne pourrais jamais assez vous dire que je vous aime plus que tout !! Merci encore pour les cadeaux et joyeux noël ❤️
+        Je ne pourrai jamais assez vous dire que je vous aime plus que tout !! Merci encore pour les cadeaux et Joyeux Noël ❤️
+        <br><br>
+        <small style="opacity: 0.8;">(Cliquez sur les photos pour les agrandir !)</small>
       </p>
     </section>
   </div>
 
   <div class="marquee-wrapper">
     <div class="marquee-track" id="track">
-      <img src="images/1" alt="Photo 1">
-      <img src="images/2" alt="Photo 2">
-      <img src="images/3" alt="Photo 3">
-      <img src="images/4" alt="Photo 4">
-      <img src="images/5" alt="Photo 5">
-      <img src="images/6" alt="Photo 6">
-      <img src="images/7" alt="Photo 7">
-      <img src="images/8" alt="Photo 8">
-      <img src="images/9" alt="Photo 9">
-      <img src="images/10" alt="Photo 10">
-      <img src="images/11" alt="Photo 11">
-      <img src="images/12" alt="Photo 12">
-      <img src="images/13" alt="Photo 13">
-      <img src="images/14" alt="Photo 14">
-      <img src="images/15" alt="Photo 15">
-      <img src="images/16" alt="Photo 16">
-      <img src="images/17" alt="Photo 17">
-      <img src="images/18" alt="Photo 18">
-      <img src="images/19" alt="Photo 19">
-      <img src="images/20" alt="Photo 20">
-    </div>
+      </div>
+  </div>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="">
+    <div id="lightbox-caption">Cliquez n'importe où pour fermer</div>
   </div>
 
   <script>
-    // This script duplicates the images to create the infinite loop effect
     document.addEventListener('DOMContentLoaded', () => {
       const track = document.getElementById('track');
-      const content = track.innerHTML;
-      track.innerHTML = content + content; 
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      
+      // 1. Create an array of numbers 1 to 20
+      let imageNumbers = Array.from({length: 20}, (_, i) => i + 1);
+
+      // 2. Shuffle Function (Fisher-Yates) - This makes it random every time
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      shuffleArray(imageNumbers);
+
+      // 3. Generate HTML for images
+      imageNumbers.forEach(num => {
+        const img = document.createElement('img');
+        img.src = `images/${num}`; // Assumes no .jpg extension based on your request
+        img.alt = `Souvenir ${num}`;
+        // Add click event for Lightbox
+        img.onclick = function() {
+          openLightbox(this.src);
+        };
+        track.appendChild(img);
+      });
+
+      // 4. Duplicate content for infinite scroll
+      // We clone the nodes so the events (clicks) are preserved
+      const originalImages = Array.from(track.children);
+      originalImages.forEach(img => {
+        const clone = img.cloneNode(true);
+        clone.onclick = function() { openLightbox(this.src); }; // Re-attach click to clone
+        track.appendChild(clone);
+      });
     });
+
+    // Lightbox Functions
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
   </script>
 
 </body>
